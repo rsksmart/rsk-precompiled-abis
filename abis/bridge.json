@@ -1010,6 +1010,23 @@
       }
     ]
   },
+    {
+    "name": "getEstimatedFeesForPegOutAmount",
+    "type": "function",
+    "stateMutability": "view",
+    "inputs": [
+      {
+        "name": "pegOutAmountInWeis",
+        "type": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ]
+  },
   {
     "name": "getNextPegoutCreationBlockNumber",
     "type": "function",

@@ -85,7 +85,8 @@
                 </div>
                 <div class="col-9">
                     <select id='abiForForkSelect' class='form-select form-select-sm' aria-label=''>
-                        <option selected value='reed'>Reed</option>
+                        <option selected value='vetiver'>Vetiver</option>
+                        <option value='reed'>Reed</option>
                         <option value='lovell'>Lovell</option>
                         <option value='arrowhead'>Arrowhead</option>
                         <option value='fingerroot'>Fingerroot</option>
@@ -168,6 +169,7 @@
     const lovellAbisUrl = 'https://raw.githubusercontent.com/rsksmart/rsk-precompiled-abis/7.0.0-LOVELL/abis/bridge.json';
     const reedAbisUrl = 'https://raw.githubusercontent.com/rsksmart/rsk-precompiled-abis/8.0.0-REED/abis/bridge.json';
     const reed810AbisUrl = 'https://raw.githubusercontent.com/rsksmart/rsk-precompiled-abis/8.1.0-REED/abis/bridge.json';
+    const vetiverAbisUrl = 'https://raw.githubusercontent.com/rsksmart/rsk-precompiled-abis/9.0.0-VETIVER/abis/bridge.json';
 
     const abisForkInfoMap = {
         orchid: {
@@ -220,6 +222,11 @@
             key: 'reed810',
             url: reed810AbisUrl
         },
+        vetiver: {
+            name: '9.0.0-VETIVER',
+            key: 'vetiver',
+            url: vetiverAbisUrl
+        },
     };
 
     const abiCache = {
@@ -233,6 +240,7 @@
         lovell: null,
         reed: null,
         reed810: null,
+        vetiver: null,
     };
 
     const peginMethods = [
@@ -282,7 +290,7 @@
     ];
 
     let selectedAbis = null;
-    let selectedAbiForkInfo = abisForkInfoMap.reed810;
+    let selectedAbiForkInfo = abisForkInfoMap.vetiver;
 
     selectedAbisUrl.href = selectedAbiForkInfo.url;
     selectedAbisUrl.textContent = selectedAbiForkInfo.url;
