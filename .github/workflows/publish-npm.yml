@@ -2,7 +2,7 @@ name: Deploy packages on NPM
 
 on:
   release:
-    types: [created, edited, published]
+    types: [published]
 
 # Declare default permissions as read only.
 permissions: read-all
@@ -53,7 +53,7 @@ jobs:
 
       - name: Check if package version matches with tag
         if: github.ref != steps.get_package_info.outputs.PACKAGE_VERSION
-        # Fail if package version not properly setted
+        # Fail if package version not properly set
         run: exit 1
       
       - name: Check if package repository matches with repository
@@ -72,9 +72,6 @@ jobs:
           rm -rf dist
           npm ci
 
-      - name: Update npm
-        run: npm install -g npm@latest
-
       - name: Pre upload validation
         id: pack
         run: | 
@@ -90,7 +87,7 @@ jobs:
 
           if npm view $PACKAGE_NAME@$PACKAGE_VERSION > /dev/null 2>&1; then
             echo "Version $PACKAGE_VERSION of $PACKAGE_NAME is already published."
-            exit 0
+            exit 1
           fi
 
           echo "Version $PACKAGE_VERSION of $PACKAGE_NAME is not published. Proceeding with publishing..."
