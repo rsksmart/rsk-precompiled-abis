@@ -101,43 +101,45 @@
     const allowedMethods = [
         'getBtcBlockchainBestChainHeight',
         'getBtcBlockchainInitialBlockHeight',
-        'getBtcBlockchainBlockHashAtDepth',
-        'getBtcTxHashProcessedHeight',
-        'isBtcTxHashAlreadyProcessed',
         'getFederationAddress',
         'getFederationSize',
         'getFederationThreshold',
-        'getFederatorPublicKeyOfType',
         'getFederationCreationTime',
         'getFederationCreationBlockNumber',
         'getRetiringFederationAddress',
         'getRetiringFederationSize',
         'getRetiringFederationThreshold',
-        'getRetiringFederatorPublicKeyOfType',
         'getRetiringFederationCreationTime',
         'getRetiringFederationCreationBlockNumber',
         'getPendingFederationHash',
         'getPendingFederationSize',
-        'getPendingFederatorPublicKeyOfType',
         'getProposedFederationAddress',
         'getProposedFederationSize',
-        'getProposedFederatorPublicKeyOfType',
         'getProposedFederationCreationTime',
         'getProposedFederationCreationBlockNumber',
         'getFeePerKb',
         'getMinimumLockTxValue',
-        'hasBtcBlockCoinbaseTransactionInformation',
         'getActiveFederationCreationBlockHeight',
         'getBtcBlockchainBestBlockHeader',
-        'getBtcBlockchainBlockHeaderByHash',
-        'getBtcBlockchainBlockHeaderByHeight',
-        'getBtcBlockchainParentBlockHeaderByHash',
-        'getEstimatedFeesForPegOutAmount',
         'getEstimatedFeesForNextPegOutEvent',
+        'getEstimatedFeesForPegOutAmount',
         'getNextPegoutCreationBlockNumber',
         'getQueuedPegoutsCount',
         'getActivePowpegRedeemScript',
-        'getBtcTransactionConfirmations',
+        'getSuperEvent',
+        'getBaseEvent',
+        'getBtcBlockchainBlockHashAtDepth',
+        'getBtcTxHashProcessedHeight',
+        'isBtcTxHashAlreadyProcessed',
+        'hasBtcBlockCoinbaseTransactionInformation',
+        'getBtcBlockchainBlockHeaderByHash',
+        'getBtcBlockchainBlockHeaderByHeight',
+        'getBtcBlockchainParentBlockHeaderByHash',
+        'getFederatorPublicKeyOfType',
+        'getRetiringFederatorPublicKeyOfType',
+        'getPendingFederatorPublicKeyOfType',
+        'getProposedFederatorPublicKeyOfType',
+        'getBtcTransactionConfirmations'
     ];
 
     const bridgeAddress = '0x0000000000000000000000000000000001000006';
@@ -384,7 +386,7 @@
                 return element.type === 'function' && allowedMethods.includes(element.name);
             })
             .sort((method1, method2) => {
-                return method1.inputs.length - method2.inputs.length;
+                return allowedMethods.indexOf(method1.name) - allowedMethods.indexOf(method2.name);
             })
             .map(element => {
                 return mapToHtmlElementsGroup(element);
