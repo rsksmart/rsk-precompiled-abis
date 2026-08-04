@@ -14,7 +14,7 @@
   "license": "ISC",
   "devDependencies": {
     "ethers": "6.17.0",
-    "mocha": "11.7.6"
+    "mocha": "11.8.0"
   },
   "types": "./types/index.d.ts"
 }
