@@ -143,6 +143,26 @@
     "outputs": []
   },
   {
+    "name": "registerPegoutTransaction",
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      {
+        "name": "btcTxHash",
+        "type": "bytes32"
+      },
+      {
+        "name": "height",
+        "type": "int256"
+      },
+      {
+        "name": "pmt",
+        "type": "bytes"
+      }
+    ],
+    "outputs": []
+  },
+  {
     "name": "addSignature",
     "type": "function",
     "stateMutability": "nonpayable",
