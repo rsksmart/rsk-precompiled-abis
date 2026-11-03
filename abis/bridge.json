@@ -1570,6 +1570,65 @@
     "inputs": [
       {
         "indexed": true,
+        "name": "btcTxHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "name": "values",
+        "type": "bytes"
+      },
+      {
+        "indexed": false,
+        "name": "outputIndexes",
+        "type": "bytes"
+      },
+      {
+        "indexed": false,
+        "name": "federationBtcAddress",
+        "type": "string"
+      }
+    ],
+    "name": "utxos_registered",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "btcTxHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "name": "values",
+        "type": "bytes"
+      },
+      {
+        "indexed": false,
+        "name": "outputIndexes",
+        "type": "bytes"
+      },
+      {
+        "indexed": false,
+        "name": "federationBtcAddress",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "name": "flyoverDerivationHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "flyover_utxos_registered",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
         "name": "caller",
         "type": "address"
       },
