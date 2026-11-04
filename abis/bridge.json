@@ -1575,7 +1575,7 @@
       },
       {
         "indexed": false,
-        "name": "values",
+        "name": "outputValues",
         "type": "bytes"
       },
       {
@@ -1602,7 +1602,7 @@
       },
       {
         "indexed": false,
-        "name": "values",
+        "name": "outputValues",
         "type": "bytes"
       },
       {
