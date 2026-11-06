@@ -143,6 +143,26 @@
     "outputs": []
   },
   {
+    "name": "registerPegoutTransaction",
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      {
+        "name": "btcTxHash",
+        "type": "bytes32"
+      },
+      {
+        "name": "height",
+        "type": "int256"
+      },
+      {
+        "name": "pmt",
+        "type": "bytes"
+      }
+    ],
+    "outputs": []
+  },
+  {
     "name": "addSignature",
     "type": "function",
     "stateMutability": "nonpayable",
@@ -1543,6 +1563,65 @@
       }
     ],
     "name": "pegout_transaction_created",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "btcTxHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "name": "outputValues",
+        "type": "bytes"
+      },
+      {
+        "indexed": false,
+        "name": "outputIndexes",
+        "type": "bytes"
+      },
+      {
+        "indexed": false,
+        "name": "federationBtcAddress",
+        "type": "string"
+      }
+    ],
+    "name": "utxos_registered",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "btcTxHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "name": "outputValues",
+        "type": "bytes"
+      },
+      {
+        "indexed": false,
+        "name": "outputIndexes",
+        "type": "bytes"
+      },
+      {
+        "indexed": false,
+        "name": "federationBtcAddress",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "name": "flyoverDerivationHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "flyover_utxos_registered",
     "type": "event"
   },
   {

@@ -1,6 +1,6 @@
 {
   "name": "@rsksmart/rsk-precompiled-abis",
-  "version": "9.0.0-VETIVER",
+  "version": "10.0.0-CARDAMOM",
   "description": "Utility to interact with RSK native contracts",
   "main": "index.js",
   "repository": {

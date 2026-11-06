@@ -85,7 +85,8 @@
                 </div>
                 <div class="col-9">
                     <select id='abiForForkSelect' class='form-select form-select-sm' aria-label=''>
-                        <option selected value='vetiver'>Vetiver</option>
+                        <option selected value='cardamom'>Cardamom</option>
+                        <option value='vetiver'>Vetiver</option>
                         <option value='reed'>Reed</option>
                         <option value='lovell'>Lovell</option>
                         <option value='arrowhead'>Arrowhead</option>
@@ -170,6 +171,7 @@
     const reedAbisUrl = 'https://raw.githubusercontent.com/rsksmart/rsk-precompiled-abis/8.0.0-REED/abis/bridge.json';
     const reed810AbisUrl = 'https://raw.githubusercontent.com/rsksmart/rsk-precompiled-abis/8.1.0-REED/abis/bridge.json';
     const vetiverAbisUrl = 'https://raw.githubusercontent.com/rsksmart/rsk-precompiled-abis/9.0.0-VETIVER/abis/bridge.json';
+    const cardamomAbisUrl = 'https://raw.githubusercontent.com/rsksmart/rsk-precompiled-abis/10.0.0-CARDAMOM/abis/bridge.json';
 
     const abisForkInfoMap = {
         orchid: {
@@ -227,6 +229,11 @@
             key: 'vetiver',
             url: vetiverAbisUrl
         },
+        cardamom: {
+            name: '10.0.0-CARDAMOM',
+            key: 'cardamom',
+            url: cardamomAbisUrl
+        },
     };
 
     const abiCache = {
@@ -241,6 +248,7 @@
         reed: null,
         reed810: null,
         vetiver: null,
+        cardamom: null,
     };
 
     const peginMethods = [
@@ -268,6 +276,7 @@
         'pegin_btc',
         'rejected_pegin',
         'unrefundable_pegin',
+        'flyover_utxos_registered',
     ];
 
     const pegoutMethods = [
@@ -275,7 +284,8 @@
         'updateCollections',
         'addSignature',
         'getFeePerKb',
-        'voteFeePerKbChange'
+        'voteFeePerKbChange',
+        'registerPegoutTransaction'
     ];
 
     const pegoutEvents = [
@@ -290,7 +300,7 @@
     ];
 
     let selectedAbis = null;
-    let selectedAbiForkInfo = abisForkInfoMap.vetiver;
+    let selectedAbiForkInfo = abisForkInfoMap.cardamom;
 
     selectedAbisUrl.href = selectedAbiForkInfo.url;
     selectedAbisUrl.textContent = selectedAbiForkInfo.url;
